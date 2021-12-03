@@ -11,6 +11,7 @@
         let tag = document.createElement(e.tag)
         _setAtt(tag, e.att)
         if (e.val !== undefined) _setValue(tag, e.val)
+        if (e.tag == "select" && e.items !== undefined) _setOptions(tag, e.items)
         if (e.childs !== undefined) new HtmlGenerator(e.childs, tag)
         parentElement.appendChild(tag)
       });
@@ -40,6 +41,15 @@
       let hg = this
       _gernerateHtml( listObjectDOM, parentElement )
       _initFunctios(hg)
+    }
+  }
+
+  function _setOptions(tag, items){
+    for (const key in items) {
+        option = document.createElement("option")
+        option.value = key
+        option.textContent = items[key]
+        tag.appendChild(option)
     }
   }
 

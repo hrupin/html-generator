@@ -16,7 +16,7 @@
         new HtmlGenerator([
             {
                 tag: "div",
-                att: { class: "class-name-1", id: "id-1", hidden: "true" },
+                att: { class: "class-name-1", id: "id-1"},
                 val: "Value 1",
                 childs: [
                     { tag: "h1", att: { class: "class-name-1.1" }, val: "Text here..." }
@@ -41,6 +41,10 @@
                 tag: "div",
                 att: { class: "class-name-3" },
                 val: "Value 3"
+            },
+            {
+                tag: "select",
+                items: { one: "First", two: "Second", three: "Third" }
             }
         ], document.body)
 
